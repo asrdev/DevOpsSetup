@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins:latest
+    container_name: jenkins
+    user: jenkins
+    volumes:
+      - /var/jenkins_home:/var/jenkins_home
+    ports:
+      - "8181:8080"
+      - "50000:50000"
+  nexus:
+    image: sonatype/nexus
+    ports:
+      - "8081:8081"
